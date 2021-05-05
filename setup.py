@@ -1,27 +1,23 @@
+import setuptools
 
-from setuptools import setup
+with open("README.md", "r") as fh:
+    long_description = fh.read()
 
-setup(
-    name = 'check-CPF',
-    version = 'v0.1.0',
-    author = 'Victor Macedo',
-    author_email = 'victormacedo996@gmail.com',
-    packages = ['check-CPF'],
-    description = 'Tool to verify if the inputed CPF is a valid CPF or not. It returns a eleven digit interger number',
-    long_description = 'It returns a eleven digit interger number. ',
-    url = 'https://github.com/victormacedo996/check-CPF',
-    project_urls = {
-        'Código fonte': 'https://github.com/victormacedo996/check-CPF',
-        'Download': 'https://github.com/yanorestes/aluratemp/archive/1.0.0.zip'
-    },
-    license = 'MIT',
-    keywords = 'CPF' 'validate' 'validar' 'cadastro de pessoa física',
-    classifiers = [
-        'Development Status :: 5 - Production/Stable',
-        'Intended Audience :: Developers',
-        'License :: OSI Approved :: MIT License',
-        'Natural Language :: English (US)',
-        'Operating System :: OS Independent',
-        'Topic :: Software Development :: Internationalization'
-    ]
-)
+setuptools.setup(
+    name="validateCPF",                     # This is the name of the package
+    version="0.0.2",                        # The initial release version
+    author="Victor Macedo",                 # Full name of the author
+    description="Function to validate inputed CPF",
+    long_description=long_description,      # Long description read from the the readme file
+    long_description_content_type="text/markdown",
+    packages=setuptools.find_packages(),    # List of all python modules to be installed
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+    ],                                      # Information to filter the project on PyPi website
+    python_requires='>=3.6',                # Minimum version requirement of the package
+    py_modules=["validate-CPF"],            # Name of the python package
+    package_dir={'':'validateCPF/src'},    # Directory of the source code of the package
+    install_requires=[] 
+)     
